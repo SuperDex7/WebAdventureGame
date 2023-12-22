@@ -1,0 +1,94 @@
+body{
+    background: url(https://64.media.tumblr.com/60774a1682b6994a70357c80b7d7c68e/tumblr_nf9wxbLc3g1s5wiico1_500.gifv) no-repeat center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size:cover;
+}
+h1,h3{
+    text-align: center;
+    background-color: black;
+    margin-top: -8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+
+}
+button{
+    font-size: 50px;
+    background-color: rgba(198, 27, 221, 0.397);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-color:blueviolet;
+}
+#Start {
+    position: absolute;
+    top: 500px;
+    left: 900px;
+    
+}
+#restart{
+  position: absolute;
+  top: 51%;
+  left: 45%;
+}
+#choice1{
+    position: absolute;
+    
+}
+#choice2{
+    position: absolute;
+    
+}
+#textbox{
+    background-color: rgba(0, 0, 0, 0.514);
+    position: absolute;
+    width: 40%;
+    height: 20%;
+    top: 78%;
+    left: 2%;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+  
+  
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 40% }
+  }
+  
+  #cont{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+    top: 93%;
+    left: 3%;
+  }
+ h2{
+   
+
+    font-size: 50px;
+    background-color: transparent;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-color:blueviolet;
+ }
+ #chapter{
+  margin-top: -70px;
+  font-size: 50px;
+  text-align: center;
+    background-color: transparent;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-color:blueviolet;
+  opacity:0;
+  transition:2s;
+  }
+  #dead{
+  font-size: 150px;
+  color: red;
+  text-align: center;
+    background-color: transparent;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  opacity:0;
+  transition:2s;
+  }
