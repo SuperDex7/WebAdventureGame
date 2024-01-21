@@ -1,5 +1,6 @@
 body{
     background: url(https://64.media.tumblr.com/60774a1682b6994a70357c80b7d7c68e/tumblr_nf9wxbLc3g1s5wiico1_500.gifv) no-repeat center fixed; 
+    
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -92,3 +93,47 @@ button{
   opacity:0;
   transition:2s;
   }
+  #hit{
+    position: absolute;
+    top: 33%;
+    left: 39%;
+    height: 15%;
+    width: 11%;
+    
+    background-color: transparent;
+    border-color: transparent;
+    
+  }
+  #left{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 39%;
+    
+  }
+  #right{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+  }
+ #top{
+  position: absolute;
+    top: 0%;
+    left: 39%;
+    height: 33%;
+    width: 11%;
+ }
+ #bottom{
+  position: absolute;
+    top: 48%;
+    left: 39%;
+    height: 52%;
+    width: 11%;
+ }
+ .miss{
+  background-color: transparent;
+    border-color: transparent;
+ }

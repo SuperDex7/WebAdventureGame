@@ -10,12 +10,24 @@ let titlee = document.getElementById('titlee');
 let chapter = document.getElementById('chapter');
 let dead = document.getElementById('dead');
 let restart = document.getElementById('restart');
+let hitb = document.getElementById('hit');
+let topb = document.getElementById('top');
+let bottomb = document.getElementById('bottom');
+let leftb = document.getElementById('left');
+let rightb = document.getElementById('right');
 let number = 0;
+
+
 function startgame(){
 body.style.backgroundImage = 'url(https://media2.giphy.com/media/xUPGcM9CazM9H5KrEA/giphy.gif?cid=ecf05e47ozlo6wcv7z84bcvvn0o4ws4znqdwfdjut1ur9g7t&ep=v1_gifs_search&rid=giphy.gif&ct=g'
 textbox.style.display = 'block';
 textbox.innerHTML = 'It\'s a nice sunny day to run in the park!\n Headquarters says my mission is to obtain the \"Krabby Patty Formula\"\n Whatever that means.';
 number = 0;
+hitb.style.display = 'none';
+topb.style.display = 'none';
+bottomb.style.display = 'none';
+leftb.style.display = 'none';
+rightb.style.display = 'none';
 cont.style.display = 'block';
 start.style.display = 'none';
 title.style.display = 'none';
@@ -41,11 +53,45 @@ function restartgame(){
 startgame();
 }
 
- 
+ function hit(){
+    alert('End game');
+ }
+ function badending(){
+    body.style.backgroundImage = 'url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTFrbmhxcGU0YXQybWI1MmFoajdvc2tjanZnajNlZnBoM2I2NTVxZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2SpNbZOBSe9d79Zu/giphy.gif)'; 
+    textbox.innerHTML = 'You lined up your sights and shot the wrong person!';
+ }
 //#region second stage
-function escape(){
-//escapee++;
-//textbox.innerHTML = escapee;
+function escapeThem(){
+    textbox.addEventListener('click', escapeThem);
+    body.style.backgroundImage = 'url(https://media1.giphy.com/media/d31wtpiWCaQ3drQQ/giphy.gif?cid=ecf05e47hm5w60fn242qthe55p403uxpadm5m34c24aau52w&ep=v1_gifs_related&rid=giphy.gif&ct=g)'; 
+    switch(number){
+        case 7:
+            textbox.innerHTML = 'You managed to escape the mob and make it towards the front of the crowd!';
+            break;
+            case 8:
+                textbox.innerHTML = 'You turn around to face the crowd and start scanning for the target.'
+                break;
+                case 9:
+                    textbox.innerHTML = 'You take aim with your pistol that only has one bullet! On the radio your captain says the target was last seen with a purple sweatband on.'
+                    break;
+                    case 10:
+                        textbox.innerHTML = 'Click on your target!'
+                        hitb.style.display = 'block';
+                        topb.style.display = 'block';
+                        bottomb.style.display = 'block';
+                        leftb.style.display = 'block';
+                        rightb.style.display = 'block';
+        
+                        textbox.removeEventListener('click', escapeThem);
+                        hitb.addEventListener('click', hit);
+                        topb.addEventListener('click', badending);
+                        bottomb.addEventListener('click', badending);
+                        leftb.addEventListener('click', badending);
+                        rightb.addEventListener('click', badending);
+                        break;
+    }
+
+number++;
 }
 
 function gothrough(){
@@ -53,7 +99,18 @@ function gothrough(){
     textbox.innerHTML = 'The crowd seems to get possesed by your target and everybody starts brawling! Spam SpaceBar to fight back!';
     choice1.style.display = 'none';
     choice2.style.display = 'none';
-    body.addEventListener('keydown', escape)
+    let escapee = 0;
+    number = 7;
+    document.addEventListener('keyup', function(e){
+       if(e.key === ' '){
+        escapee++;
+       }
+        
+        if (escapee === 10){
+           escapeThem(); 
+        }
+    })
+    
 }
 function goaround(){
     
@@ -102,7 +159,7 @@ function leftpath(){
     choice1.style.top = '35%';
     choice2.style.left = '43%';
     choice2.style.top = '45%';
-    let escapee = 0;
+    
     choice2.removeEventListener('click', rightpath)
 choice1.removeEventListener('click', leftpath)
 choice2.addEventListener('click', gothrough)
